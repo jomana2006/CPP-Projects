@@ -17,7 +17,7 @@ This project is a game of rock, paper, scissors against the computer.
 
 The each option is given a number, and the user chooses a number from the given numbers. The program then proceeds to say the computer's choice, and announces the winner.
 
-The computer's choice is determined using a function that randomly generates numbers using `rand()` and `srand()`.
+The computer's choice is determined using functions that randomly generate numbers [`rand()` and `srand()`].
 
 ### 3. Login and Regisstration System (created on August 28, 2024)
 This project lets the user login or register into the program. 
