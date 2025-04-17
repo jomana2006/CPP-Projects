@@ -11,3 +11,10 @@ How is CGPA calculated?
 ---> Total GPA of the semester is calculated by summing up the GPA of each module and dividing it by the total credit scores in the semester. Let's say you took 3 modules in the semester, and each module weighs 10 credit scores, you multiply the GPA calculated for each module by its credit score, then you sum up the GPAs of each module, over the total credit score which is 30 in this example.
 
 ---> CGPA is then calculated by summing up the GPAs of the semesters and then dividing it by the number of semester.
+
+## 2. RPS Game (created on August 12, 2024)
+This project is a game of rock, paper, scissors against the computer.
+
+The each option is given a number, and the user chooses a number from the given numbers. The program then proceeds to say the computer's choice, and announces the winner.
+
+The computer's choice is determined using a function that randomly generates numbers called `rand()`.
