@@ -42,4 +42,6 @@ There will be a list of basic methematical operations (addition, substraction, m
 
 The user chooses the operation required and inputs the needed values and the program calculates according to the operation.
 
-Example, if you chose multiplication, and you enter 5 and 6, then it will calculate 5*6 and output the result.
+Example, if you chose multiplication, and you enter 5 and 6, then it will calculate `5*6` and output the result.
+
+Complex calculations were calculated using functions in the `cmath` library.
