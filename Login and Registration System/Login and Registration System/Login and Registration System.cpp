@@ -1,0 +1,79 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+using namespace std;
+int choice;
+void display() {
+    cout << "What would you like to do?" << endl;
+    cout << "1. Login" << endl; cout << "2. Register" << endl;
+    string line;
+    getline(cin, line);
+    istringstream input(line);
+    input >> choice;
+}
+void registeruser() {
+    string username;
+    string password;
+    string password2;
+    cout << "Enter your username: ";
+    getline(cin, username);
+    cout << "Hello " << username << "!" << endl;
+    cout << "Now, please enter your password: ";
+    getline(cin, password);
+    cout << "Please enter your password again: ";
+    getline(cin, password2);
+    if (password == password2) {
+        ofstream userfile(username + ".txt");
+        if (!userfile) {
+            cerr << "Unable to create a file." << endl;
+            return;
+        }
+        userfile << username << endl;
+        userfile << password << endl;
+        userfile.close();
+        cout << "Registration Successful.";
+    }
+    else
+        cerr << "Invalid Password." << endl;
+}
+void login() {
+    string username;
+    string password;
+    string fileusername;
+    string filepassword;
+    cout << "Enter your username: ";
+    getline(cin, username);
+    cout << "Welcome back " << username << endl;
+    cout << "Enter your password: ";
+    getline(cin, password);
+    ifstream userfile(username + ".txt");
+    if (!userfile) {
+        cerr << "Unable to open file." << endl;
+        return;
+    }
+    getline(userfile, fileusername);
+    getline(userfile, filepassword);
+    userfile.close();
+    if (username == fileusername && password == filepassword) {
+        cout << "Login Successful.";
+    }
+    else
+        cerr << "Invalid Credentials.";
+}
+int main() {
+    cout << "Welcome!" << endl;
+    display();
+    switch (choice) {
+    case 1:
+        login();
+        break;
+    case 2:
+        registeruser();
+        break;
+    default:
+        cout << "Invalid Choice.";
+        break;
+    }
+    return 0;
+}
